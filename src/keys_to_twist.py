@@ -12,7 +12,7 @@ g_twist_pub = None
 g_target_twist = None 
 g_last_twist = None
 g_last_send_time = None
-g_vel_scales = [0.1, 0.1] # default to very slow 
+g_vel_scales = [1, 1] # default to very slow 
 g_vel_ramps = [1, 1] # units: meters per second^2
 
 # BEGIN RAMP
@@ -66,8 +66,8 @@ if __name__ == '__main__':
   rospy.Subscriber('keys', String, keys_cb)
   g_target_twist = Twist() # initializes to zero
   g_last_twist = Twist()
-  g_vel_scales[0] = fetch_param('~angular_scale', 0.1)
-  g_vel_scales[1] = fetch_param('~linear_scale', 0.1)
+  g_vel_scales[0] = fetch_param('~angular_scale', 1)
+  g_vel_scales[1] = fetch_param('~linear_scale', 1)
   g_vel_ramps[0] = fetch_param('~angular_accel', 1.0)
   g_vel_ramps[1] = fetch_param('~linear_accel', 1.0)
 
