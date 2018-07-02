@@ -12,7 +12,7 @@ from geometry_msgs.msg import Twist
 
 rightMotorSpeed = 64
 leftMotorSpeed = 192
-#port = serial.Serial('/dev/serial0', 38400)
+port = serial.Serial('/dev/serial0', 38400)
 
 def twist_cb(msg):
 	global rightMotorSpeed, leftMotorSpeed
@@ -37,8 +37,8 @@ def twist_cb(msg):
 
 	print rightMotorSpeed
 	print leftMotorSpeed
-#	port.write(bytearray([leftMotorSpeed]))
-#	port.write(bytearray([rightMotorSpeed]))
+	port.write(bytearray([leftMotorSpeed]))
+	port.write(bytearray([rightMotorSpeed]))
 
 rospy.init_node('motor_driver')
 rospy.Subscriber('cmd_vel', Twist, twist_cb)
