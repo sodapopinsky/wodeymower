@@ -20,10 +20,10 @@ def twist_cb(msg):
 	if msg.angular.z > 0:
 		#turn left
 		rightMotorSpeed = 64 + int(63*msg.angular.z)
-		leftMotorSpeed = 192
+		leftMotorSpeed = 192 + int(63*msg.linear.x)
 	elif msg.angular.z < 0:
 		#turn right
-		rightMotorSpeed = 64
+		rightMotorSpeed = 64 + int(63*msg.linear.x)
 		leftMotorSpeed = 192 + int(63*msg.angular.z * -1)
 	elif msg.linear.x <= 0:
 		#stop
