@@ -3,12 +3,12 @@
 
   <node name="keys_to_twist" pkg="wodeymower" type="keys_to_twist.py" />
 
-  # Comment out these sections for live robot
-  # <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
-  # <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-        args="-param robot_description -urdf -model wodeymower" />
+  <!-- Comment out these sections for live robot -->
+  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch"/> -->
+  <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model wodeymower" />  -->
 
-  # Comment out these sections for simulation
+  <!-- Comment out these sections for simulation -->
   <node name="motor_driver" pkg="wodeymower" type="motor_driver.py" />
 
 </launch>
