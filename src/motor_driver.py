@@ -26,6 +26,8 @@ def twist_cb(msg):
 
 	print rightMotorSpeed
 	print leftMotorSpeed
+	port.write(bytearray([leftMotorSpeed]))
+	port.write(bytearray([rightMotorSpeed]))
 
 rospy.init_node('motor_driver')
 rospy.Subscriber('cmd_vel', Twist, twist_cb)
